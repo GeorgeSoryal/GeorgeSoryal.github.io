@@ -1,0 +1,24 @@
+/* Place your CSS styles in this file */
+
+h1 {
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: normal;
+}
+
+.Style {
+    height: 100px;
+    border-color: #35B000;
+    display: list-item;
+    font-size: xx-large;
+}
+
+.Labels {
+    background-color: #1921be3d;
+    font-weight: bold;
+}
+
+.Adjacent div {
+    vertical-align: top;
+    display: inline-block;
+}
