@@ -9,6 +9,18 @@ button{
     text-shadow: 1px 1px 1px #7d713a;
 }
 
+#endScreenBody{
+    color: #e99937;
+}
+
+#endGameText{
+    color: #4e80af;
+}
+
+#descriptionText{
+    color: #c34530;
+}
+
 .endScreenText{
     max-width: 700px;
 }

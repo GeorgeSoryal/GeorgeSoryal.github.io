@@ -1,4 +1,7 @@
 /* Place your CSS styles in this file */
+html{
+    background-color: #FFFFFF;
+}
 
 h1 {
     text-align: center;

@@ -1,8 +1,16 @@
-var fullscreenButton = document.getElementsByClassName("fullscreen")[0];
+var fullscreenButtons = document.getElementsByClassName("fullscreen");
+console.log(fullscreenButtons);
+for(var i=0; i<fullscreenButtons.length; i++){
+  console.log(fullscreenButtons[i]);
+  console.log(document.getElementsByTagName("iframe"));
+  Array.prototype.forEach.call(fullscreenButtons, (button, index) => {
+    button.addEventListener("click", ()=> {
+      console.log(document.getElementsByTagName("iframe")[index]);
+      openFullscreen(document.getElementsByTagName("iframe")[index]);
+    });
+  });
+}
 
-fullscreenButton.addEventListener("click", ()=>{
-    openFullscreen(document.getElementsByTagName("iframe")[0]);
-});
 
 function openFullscreen(elem) {
     if (elem.requestFullscreen) {
