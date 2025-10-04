@@ -1,0 +1,1 @@
+@import url("/RegalRobotsWebsite/styles.css");.about-us-content{text-align:left}.about-us-images{flex:.5;color:var(--text-color)}@media only screen and (orientation:landscape) and (max-width:992px){.about-us-images{min-width:calc(var(--mobile-landscape-sidebar-width) + 3vw);flex:.8}}
