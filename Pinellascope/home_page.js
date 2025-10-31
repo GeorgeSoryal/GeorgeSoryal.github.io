@@ -147,7 +147,7 @@ document.querySelector("#subscriptionButton").addEventListener("click", async ()
     try {
         // register service worker (if not already registered)
         const serviceWorkerRegistration = await navigator.serviceWorker.register('./serviceWorker.js', 
-            { scope: 'https://georgewsoryal.com/Pinellascope' });
+            { scope: 'https://georgewsoryal.com/Pinellascope/' });
         document.querySelector("#subscriptionStatus").textContent =
          'Service Worker registered. Requesting permission...';
 
