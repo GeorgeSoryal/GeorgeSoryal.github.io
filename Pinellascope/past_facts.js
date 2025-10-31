@@ -1,3 +1,5 @@
+let hasRun = false;
+
 function openPastFacts() {
     window.location.href = "past_facts.html";
 }
@@ -24,6 +26,8 @@ async function getLaunchDay() {
 }
 
 async function getPastFacts() {
+    hasRun = true;
+
     let res = await fetch("https://us-central1-pinellascope.cloudfunctions.net/getPastFacts", {
         method: "GET",
         headers: {
@@ -35,8 +39,10 @@ async function getPastFacts() {
     }
     const data = await res.json();
     let pastFacts = data.pastFacts;
-    for(let i = 0; i < pastFacts.length; i++) {
-        pastFacts[i] = " " + pastFacts[i].substring(1, pastFacts[i].length-1);
+    if(!hasRun) {
+        for(let i = 0; i < pastFacts.length; i++) {
+            pastFacts[i] = " " + pastFacts[i].substring(1, pastFacts[i].length-1);
+        }
     }
 
     return pastFacts;
