@@ -23,7 +23,7 @@ const db = admin.firestore();
 
 export const scheduledDaily = onSchedule({
   secrets: ['VAPID_PRIVATE_KEY'],
-  schedule: '15 23 * * *',
+  schedule: '45 23 * * *',
   timeZone: 'America/New_York',
   region: 'us-central1'}, async (context: any) => {
   const vapidPrivateKey = VAPID_PRIVATE_KEY.value();
