@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinellaScope</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="topBar">
+        <a href="pinellascope.html"><h1 id="appTitle">PinellaScope</h1></a>
+        <button id="pastFacts" onclick="openPastFacts()">Past Facts</button>
+    </div>
+    <div id="mainContent">
+        <div id="pastFactsContainer">
+            <h2>Past Facts</h2>
+            <h2 id="launchDate"></h2>
+            <ul id="factsList">
+                <!-- Past facts will be dynamically inserted here -->
+            </ul>
+        </div>
+    </div>
+    <script src="past_facts.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+:root{
+    --accent:#df873f;
+    --bg-light:#f7f8fb;
+    --card:#ffffff;
+    --card-dark:#0f1720;
+    --text:#0b1220;
+    --muted:#6b7280;
+    --radius:14px;
+    --shadow: 0 6px 18px rgba(10,10,10,0.08);
+    --glass: rgba(255,255,255,0.6);
+    --glass-dark: rgba(10,12,15,0.45);
+    --max-width:640px;
+}
+
+/* Respect user dark mode */
+@media (prefers-color-scheme: dark){
+    :root{
+        --card: var(--card-dark);
+        --text: #e6eef8;
+        --muted: #9aa6b2;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce){
+    *{ transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* Fullscreen + safe area on mobile PWAs */
+html, body {
+    height: 100%;
+    width: 100%;
+    background: burlywood;
+    color: var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-tap-highlight-color: transparent;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* App layout */
+#topBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    display:flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.4));
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    z-index: 40;
+}
+
+/* Main content container */
+#mainContent{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: calc(56px + 20px) 16px 24px; /* account for top bar */
+    max-width: var(--max-width);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Card style for sections */
+#countdownContainer,
+#dailyMessage,
+#status,
+#pastFactsContainer{
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    min-height: 72px;
+}
+
+/* Tappable controls */
+button{
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: linear-gradient(180deg, var(--accent), color-mix(in srgb, var(--accent) 70%, black 10%));
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 12px;
+    min-height: 48px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(10,132,255,0.18);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+button:active{ transform: translateY(1px) scale(0.998); box-shadow: 0 6px 16px rgba(10,132,255,0.14); }
+button[disabled]{ opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* Specific containers */
+#revealDailyContainer, #subscribeButtonContainer, #learnMoreContainer, #shareContainer, #status{
+    display:flex;
+    gap:12px;
+    justify-content: center;
+}
+
+#message{
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    line-height: 1.15;
+}
+
+#factText{
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+/* Countdown styling */
+#countdown{
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+#timeRemaining{
+    font-weight: 700;
+    font-size: 22px;
+}
+
+/* Responsive typography and layout tweaks */
+@media (min-width: 420px){
+    #mainContent{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #message{ font-size: 22px; }
+}
+
+@media (min-width: 760px){
+    #mainContent{ padding-top: calc(56px + 32px); grid-template-columns: 1fr 320px; gap: 20px; align-items: start; }
+    #countdownContainer{ grid-column: 2 / 3; position: sticky; top: calc(56px + 20px); }
+}
+
+/* Small utility classes */
+.center{ display:flex; align-items:center; justify-content:center; }
+.muted{ color:var(--muted); font-size:14px; }
+.padded{ padding: 12px; }
+
+/* Make sure interactive areas are big enough on mobile */
+a, button { min-height: 44px; }
+
+/* Minor focus styles for keyboard users */
+:focus{ outline: 3px solid color-mix(in srgb, var(--accent) 30%, transparent); outline-offset: 2px; border-radius: 8px; }
+
+/* End of PWA-ready stylesheet */

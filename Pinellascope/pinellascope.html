@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinellaScope</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+<body>
+    <div id="topBar">
+        <a href="pinellascope.html"><h1 id="appTitle">PinellaScope</h1></a>
+        <button id="pastFacts" onclick="openPastFacts()">Past Facts</button>
+    </div>
+    <div id="mainContent">
+        <div id="countdownContainer">
+            <h2 id="countdown">New fun fact every day at 11:15pm ET! Time until next fact:</h2>
+            <p id="timeRemaining"></p>
+        </div>
+        <div id="revealDailyContainer">
+            <button id="revealDailyButton" onclick="revealFact()">Reveal Daily Message</button>
+        </div>
+        <div id="dailyMessage">
+            <h1 id="message">Today's Fact: Did you know that... </h1>
+            <p id="factText"></p>
+        </div>
+        <div id="subscribeButtonContainer">
+            <button id="subscriptionButton">Subscribe to notifications</button>
+            <button id="unsubscribeButton" disabled>Unsubscribe from notifications</button>
+        </div>
+        <div id="learnMoreContainer">
+            <button id="learnMoreLink">Learn more about this topic</button>
+        </div>
+        <div id ="shareContainer">
+            <button id="shareButton">Share this fact</button>
+        </div>
+        <div id="status">
+            <p id="subscriptionStatus">Subscription Status: (none)</p>
+        </div>
+    </div>
+    <script src="home_page.js" defer></script>
+</body>
+</html>
