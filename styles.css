@@ -10,12 +10,18 @@
 /* Body styles */
 body {
     font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-    background: #f7f9fb;
+    display: flex;
+    flex-direction: column;
+    background: #A88257;
     color: #222;
     line-height: 1.6;
     padding: 40px 0;
     min-height: 100vh;
     padding-left: 30px;
+}
+
+body * {
+    align-self: center;
 }
 
 /* Headings */
@@ -43,7 +49,7 @@ h2:first-of-type {
 /* Button Styles */
 button {
     display: inline-block;
-    background: linear-gradient(90deg, #2563eb 0%, #1e40af 100%);
+    background: linear-gradient(90deg, #2186de 0%, #1e40af 100%);
     color: #fff;
     border: none;
     border-radius: 6px;
