@@ -31,13 +31,14 @@ export const scheduledDaily = onSchedule({
     console.error('VAPID_PRIVATE_KEY secret not found at runtime. Aborting push job.');
     return;
   }
-  webpush.setVapidDetails('mailto:georgewsoryal@gmail.com', VAPID_PUBLIC_KEY, vapidPrivateKey);
+  webpush.setVapidDetails('', VAPID_PUBLIC_KEY, vapidPrivateKey);
 
   const notificationPayload = JSON.stringify({
     title: 'New Pinellas Fun Fact! ☀️🍊🔔',
     body: 'Time to check your app and see what\'s new.',
     url: '/', // homepage
   });
+  console.log('notification payload: ' + notificationPayload);
 
   // Read all subscriptions from Firestore
   const allSubscriptions = await db.collection('subscriptions').get();

@@ -3,7 +3,7 @@
 // Event listener for when a push notification arrives from the backend.
 self.addEventListener('push', function(event) {
     // The notification payload sent from the Firebase Function (index.ts)
-    const data = event.data;
+    const data = event.data.json();
     
     // Customize the notification appearance and behavior
     const options = {
