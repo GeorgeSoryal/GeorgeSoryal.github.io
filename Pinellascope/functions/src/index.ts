@@ -31,7 +31,7 @@ export const scheduledDaily = onSchedule({
     console.error('VAPID_PRIVATE_KEY secret not found at runtime. Aborting push job.');
     return;
   }
-  webpush.setVapidDetails('', VAPID_PUBLIC_KEY, vapidPrivateKey);
+  webpush.setVapidDetails('https://www.georgewsoryal.com/', VAPID_PUBLIC_KEY, vapidPrivateKey);
 
   const notificationPayload = JSON.stringify({
     title: 'New Pinellas Fun Fact! ☀️🍊🔔',
